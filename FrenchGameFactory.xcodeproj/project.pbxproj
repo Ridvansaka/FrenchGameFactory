@@ -7,7 +7,15 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		F30C02F6235E273000637608 /* Player.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30C02F5235E273000637608 /* Player.swift */; };
+		F30C02F8235E279900637608 /* Warrior.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30C02F7235E279900637608 /* Warrior.swift */; };
+		F30C02FA235E282B00637608 /* GameManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30C02F9235E282B00637608 /* GameManager.swift */; };
 		F30C38BD231D8B5D00719B10 /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = F30C38BC231D8B5D00719B10 /* main.swift */; };
+		F33F94D923608C2400262618 /* Archer.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33F94D823608C2400262618 /* Archer.swift */; };
+		F33F94DB23609FEC00262618 /* Magus.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33F94DA23609FEC00262618 /* Magus.swift */; };
+		F33F94DD23609FFC00262618 /* Knight.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33F94DC23609FFC00262618 /* Knight.swift */; };
+		F33F94DF2360A00F00262618 /* Barbarian.swift in Sources */ = {isa = PBXBuildFile; fileRef = F33F94DE2360A00F00262618 /* Barbarian.swift */; };
+		F38BAC0223662756008D3629 /* Weapon.swift in Sources */ = {isa = PBXBuildFile; fileRef = F38BAC0123662756008D3629 /* Weapon.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -23,8 +31,16 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		F30C38B9231D8B5D00719B10 /* Test */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = Test; sourceTree = BUILT_PRODUCTS_DIR; };
+		F30C02F5235E273000637608 /* Player.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Player.swift; sourceTree = "<group>"; };
+		F30C02F7235E279900637608 /* Warrior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Warrior.swift; sourceTree = "<group>"; };
+		F30C02F9235E282B00637608 /* GameManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameManager.swift; sourceTree = "<group>"; };
+		F30C38B9231D8B5D00719B10 /* FrenchGameFactory */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = FrenchGameFactory; sourceTree = BUILT_PRODUCTS_DIR; };
 		F30C38BC231D8B5D00719B10 /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		F33F94D823608C2400262618 /* Archer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Archer.swift; sourceTree = "<group>"; };
+		F33F94DA23609FEC00262618 /* Magus.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Magus.swift; sourceTree = "<group>"; };
+		F33F94DC23609FFC00262618 /* Knight.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Knight.swift; sourceTree = "<group>"; };
+		F33F94DE2360A00F00262618 /* Barbarian.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Barbarian.swift; sourceTree = "<group>"; };
+		F38BAC0123662756008D3629 /* Weapon.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Weapon.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -41,7 +57,7 @@
 		F30C38B0231D8B5C00719B10 = {
 			isa = PBXGroup;
 			children = (
-				F30C38BB231D8B5D00719B10 /* Test */,
+				F30C38BB231D8B5D00719B10 /* FrenchGameFactory */,
 				F30C38BA231D8B5D00719B10 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -49,25 +65,41 @@
 		F30C38BA231D8B5D00719B10 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				F30C38B9231D8B5D00719B10 /* Test */,
+				F30C38B9231D8B5D00719B10 /* FrenchGameFactory */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		F30C38BB231D8B5D00719B10 /* Test */ = {
+		F30C38BB231D8B5D00719B10 /* FrenchGameFactory */ = {
 			isa = PBXGroup;
 			children = (
 				F30C38BC231D8B5D00719B10 /* main.swift */,
+				F30C02F9235E282B00637608 /* GameManager.swift */,
+				F30C02F5235E273000637608 /* Player.swift */,
+				F346D940236B89B3009BC39C /* Warriors */,
+				F38BAC0123662756008D3629 /* Weapon.swift */,
 			);
-			path = Test;
+			path = FrenchGameFactory;
+			sourceTree = "<group>";
+		};
+		F346D940236B89B3009BC39C /* Warriors */ = {
+			isa = PBXGroup;
+			children = (
+				F30C02F7235E279900637608 /* Warrior.swift */,
+				F33F94D823608C2400262618 /* Archer.swift */,
+				F33F94DA23609FEC00262618 /* Magus.swift */,
+				F33F94DC23609FFC00262618 /* Knight.swift */,
+				F33F94DE2360A00F00262618 /* Barbarian.swift */,
+			);
+			path = Warriors;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		F30C38B8231D8B5C00719B10 /* Test */ = {
+		F30C38B8231D8B5C00719B10 /* FrenchGameFactory */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = F30C38C0231D8B5D00719B10 /* Build configuration list for PBXNativeTarget "Test" */;
+			buildConfigurationList = F30C38C0231D8B5D00719B10 /* Build configuration list for PBXNativeTarget "FrenchGameFactory" */;
 			buildPhases = (
 				F30C38B5231D8B5C00719B10 /* Sources */,
 				F30C38B6231D8B5C00719B10 /* Frameworks */,
@@ -77,9 +109,9 @@
 			);
 			dependencies = (
 			);
-			name = Test;
+			name = FrenchGameFactory;
 			productName = Test;
-			productReference = F30C38B9231D8B5D00719B10 /* Test */;
+			productReference = F30C38B9231D8B5D00719B10 /* FrenchGameFactory */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -97,7 +129,7 @@
 					};
 				};
 			};
-			buildConfigurationList = F30C38B4231D8B5C00719B10 /* Build configuration list for PBXProject "Test" */;
+			buildConfigurationList = F30C38B4231D8B5C00719B10 /* Build configuration list for PBXProject "FrenchGameFactory" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -109,7 +141,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				F30C38B8231D8B5C00719B10 /* Test */,
+				F30C38B8231D8B5C00719B10 /* FrenchGameFactory */,
 			);
 		};
 /* End PBXProject section */
@@ -119,7 +151,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F30C02F8235E279900637608 /* Warrior.swift in Sources */,
+				F30C02FA235E282B00637608 /* GameManager.swift in Sources */,
+				F33F94DF2360A00F00262618 /* Barbarian.swift in Sources */,
+				F30C02F6235E273000637608 /* Player.swift in Sources */,
 				F30C38BD231D8B5D00719B10 /* main.swift in Sources */,
+				F33F94D923608C2400262618 /* Archer.swift in Sources */,
+				F38BAC0223662756008D3629 /* Weapon.swift in Sources */,
+				F33F94DB23609FEC00262618 /* Magus.swift in Sources */,
+				F33F94DD23609FFC00262618 /* Knight.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -262,7 +302,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		F30C38B4231D8B5C00719B10 /* Build configuration list for PBXProject "Test" */ = {
+		F30C38B4231D8B5C00719B10 /* Build configuration list for PBXProject "FrenchGameFactory" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F30C38BE231D8B5D00719B10 /* Debug */,
@@ -271,7 +311,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		F30C38C0231D8B5D00719B10 /* Build configuration list for PBXNativeTarget "Test" */ = {
+		F30C38C0231D8B5D00719B10 /* Build configuration list for PBXNativeTarget "FrenchGameFactory" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				F30C38C1231D8B5D00719B10 /* Debug */,
