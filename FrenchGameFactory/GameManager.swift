@@ -49,6 +49,7 @@ class GameManager {
     /// Function which resets the game, create the players and warriors, then start the fight
     func playGame() {
         resetGame()
+        displayGameRules()
         createPlayers()
         startTeamCreationPhase()
         startFightPhase()
@@ -59,6 +60,17 @@ class GameManager {
     private func resetGame() {
         players.removeAll()
         numberOfRounds = 0
+    }
+    
+    /// Function which displays the instructions regarding the game
+    private func displayGameRules() {
+        print("Welcome!")
+        print("FrenchGame Factory presents")
+        print("Warrior's Duel")
+        print("In this game, you will pick 3 amazing warriors and fight against your opponent until you rule the world")
+        print("2 players, 1 winner")
+        print("Let's fight!")
+        print()
     }
     
     /// Function which create and add the players to the players array
