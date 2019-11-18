@@ -60,8 +60,8 @@ class Player {
             let warriorName = getWarriorName(warriorNumber: warriorNumber, opponent: opponent)
             let warriorType = getWarriorType()
             let warriorToAdd = Warrior.createWarriorAccordingTo(type: warriorType, warriorName: warriorName)
-
-             warriors.append(warriorToAdd)
+            
+            warriors.append(warriorToAdd)
         }
     }
     
@@ -88,43 +88,52 @@ class Player {
     // 3. Finally the warrior performs the action
     func playTurn(opponentPlayer: Player) {
         print("🥊 Choose the warrior's number you want to send to attack (between 1-3) \n")
-        var selectedFriendlyWarrior: Warrior?
+        var selectedFriendlyWarriorInput: Warrior?
         repeat {
-            selectedFriendlyWarrior = selectWarrior(from: self)
-        } while selectedFriendlyWarrior == nil
-        print("💪🏼 The warrior which will perform the action is \(selectedFriendlyWarrior!.name) \n")
+            selectedFriendlyWarriorInput = selectWarrior(from: self)
+        } while selectedFriendlyWarriorInput == nil
         
-        selectedFriendlyWarrior!.mightFindTreasure()
+        guard let selectedFriendlyWarrior = selectedFriendlyWarriorInput else { return }
+        
+        print("💪🏼 The warrior which will perform the action is \(selectedFriendlyWarrior.name) \n")
+        
+        selectedFriendlyWarrior.mightFindTreasure()
         
         // If we select a Magus, it will heal a teammate
-        if let magus = selectedFriendlyWarrior! as? Magus {
+        if let magus = selectedFriendlyWarrior as? Magus {
             print("💉 Choose the warrior's number of your team that you want to heal (between 1-3) \n")
-            var selectedFriendlyWarriorToHeal: Warrior?
+            var selectedFriendlyWarriorToHealInput: Warrior?
             repeat {
-                selectedFriendlyWarriorToHeal = selectWarrior(from: self)
-            } while selectedFriendlyWarriorToHeal == nil
-            print("🎯 The warrior who will be healed is \(selectedFriendlyWarriorToHeal!.name) \n")
+                selectedFriendlyWarriorToHealInput = selectWarrior(from: self)
+            } while selectedFriendlyWarriorToHealInput == nil
             
-            magus.heal(warrior: selectedFriendlyWarriorToHeal!)
+            guard let selectedFriendlyWarriorToHeal = selectedFriendlyWarriorToHealInput else { return }
             
-            print("🎩 The Magus \(selectedFriendlyWarrior!.name) healed \(selectedFriendlyWarriorToHeal!.name)")
-            print("🤕 New Healthpoints : \(selectedFriendlyWarriorToHeal!.currentHealthPoints) \n")
+            print("🎯 The warrior who will be healed is \(selectedFriendlyWarriorToHeal.name) \n")
+            
+            magus.heal(warrior: selectedFriendlyWarriorToHeal)
+            
+            print("🎩 The Magus \(selectedFriendlyWarrior.name) healed \(selectedFriendlyWarriorToHeal.name)")
+            print("🤕 New Healthpoints : \(selectedFriendlyWarriorToHeal.currentHealthPoints) \n")
             
             // If we select another Warrior than a Magus, the attack will take place
         } else {
             print("🥊 Choose the warrior's number you want to attack in the opponent team (between 1-3)\n")
-            var selectedOpponentWarrior: Warrior?
+            var selectedOpponentWarriorInput: Warrior?
             repeat {
-                selectedOpponentWarrior = selectWarrior(from: opponentPlayer)
-            } while selectedOpponentWarrior == nil
-            print("🎯 The warrior who will perform the attack is \(selectedOpponentWarrior!.name) \n")
+                selectedOpponentWarriorInput = selectWarrior(from: opponentPlayer)
+            } while selectedOpponentWarriorInput == nil
             
-            selectedFriendlyWarrior!.attack(opponent: selectedOpponentWarrior!)
+            guard let selectedOpponentWarrior = selectedOpponentWarriorInput else { return }
             
-            print("🏹 The warrior \(selectedFriendlyWarrior!.name) attacked \(selectedOpponentWarrior!.name)")
-            print("🤕 Remaining Healthpoints : \(selectedOpponentWarrior!.currentHealthPoints) \n")
-            if selectedOpponentWarrior!.currentHealthPoints <= 0 {
-                print("☠️ \(selectedOpponentWarrior!.name) is dead \n")
+            print("🎯 The warrior who will perform the attack is \(selectedOpponentWarrior.name) \n")
+            
+            selectedFriendlyWarrior.attack(opponent: selectedOpponentWarrior)
+            
+            print("🏹 The warrior \(selectedFriendlyWarrior.name) attacked \(selectedOpponentWarrior.name)")
+            print("🤕 Remaining Healthpoints : \(selectedOpponentWarrior.currentHealthPoints) \n")
+            if selectedOpponentWarrior.currentHealthPoints <= 0 {
+                print("☠️ \(selectedOpponentWarrior.name) is dead \n")
             }
         }
     }
@@ -232,7 +241,7 @@ class Player {
         return warriorType
     }
     
-
+    
     /// Function which asks to the playing player to input a number between 1 and 3 in order to select a warrior from a specific player team (own or opponent team)
     /// Error cases handled:
     ///      1. Not Int
