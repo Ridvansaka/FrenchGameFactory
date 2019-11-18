@@ -92,7 +92,7 @@ class Player {
         repeat {
             selectedFriendlyWarrior = selectWarrior(from: self)
         } while selectedFriendlyWarrior == nil
-        print("💪🏼 The attacking warrior is \(selectedFriendlyWarrior!.name) \n")
+        print("💪🏼 The warrior which will perform the action is \(selectedFriendlyWarrior!.name) \n")
         
         selectedFriendlyWarrior!.mightFindTreasure()
         
