@@ -144,8 +144,9 @@ class Player {
             errorOccured = false
             var nameIsAlreadyUsed = false
             if let warriorNameInput = readLine() {
+                let warriorNameWithoutSpaces = warriorNameInput.replacingOccurrences(of: " ", with: "")
                 
-                if warriorNameInput != "" {
+                if !warriorNameWithoutSpaces.isEmpty {
                     // Verify if name is already used by the current player
                     if getWarriorNameIsAlreadyUsedBy(player: self, warriorNameInput: warriorNameInput) {
                         errorOccured = true
