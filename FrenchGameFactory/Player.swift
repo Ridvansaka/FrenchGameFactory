@@ -10,14 +10,14 @@ import Foundation
 
 class Player {
     
-    //MARK: Enums
+    // MARK: Enums
     
     /// Player color to identify them
     enum Color: String {
         case blue, red
     }
     
-    //MARK: Inits
+    // MARK: Inits
     init(number: Int) {
         switch number {
         case 1:
@@ -27,7 +27,7 @@ class Player {
         }
     }
     
-    //MARK: Properties & Constants
+    // MARK: Properties & Constants
     
     /// Constant which defines the number of warriors per player
     private let numberOfWarriorPerTeam = 3
@@ -46,7 +46,7 @@ class Player {
         return false
     }
     
-    //MARK: Public Methods
+    // MARK: Public Methods
     
     /// Function which create all the warriors which constitute the team
     ///     1. Asks warrior's name
@@ -80,12 +80,12 @@ class Player {
         }
     }
     
-    // Function which allows to the player to play its turn :
-    // 1. It asks to the playing player to pick a warrior from its team
-    // 2. Depending on the class of the warrior selected it will ask to pick another warrior as a target
-    //      => from opponent team if warrior is attacking (!= magus)
-    //      => from its own team if warrior is healing (magus)
-    // 3. Finally the warrior performs the action
+    /// Function which allows to the player to play its turn :
+    /// 1. It asks to the playing player to pick a warrior from its team
+    /// 2. Depending on the class of the warrior selected it will ask to pick another warrior as a target
+    ///      => from opponent team if warrior is attacking (!= magus)
+    ///      => from its own team if warrior is healing (magus)
+    /// 3. Finally the warrior performs the action
     func playTurn(opponentPlayer: Player) {
         print("🥊 Choose the warrior's number you want to send to attack (between 1-3) \n")
         var selectedFriendlyWarriorInput: Warrior?
@@ -138,7 +138,7 @@ class Player {
         }
     }
     
-    //MARK: Private Methods
+    // MARK: Private Methods
     
     /// Function which asks to the playing player to input a String in order to define the warrior's name
     /// Error cases handled:

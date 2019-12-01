@@ -9,14 +9,14 @@
 import Foundation
 
 class Weapon {
-    //MARK: Enums
+    // MARK: Enums
     
     /// The different types of weapons
     enum WeaponType {
         case wand, bow, spear, axe
     }
     
-    //MARK: Initializers
+    // MARK: Initializers
     init(name: String, attackBonus: Int, magicBonus: Int, weaponType: WeaponType) {
         self.name = name
         self.attackBonus = attackBonus
@@ -44,7 +44,7 @@ class Weapon {
         }
     }
     
-    //MARK: Properties
+    // MARK: Properties
     private var name: String
     var attackBonus: Int
     var magicBonus: Int

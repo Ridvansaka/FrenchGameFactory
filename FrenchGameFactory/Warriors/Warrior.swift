@@ -9,14 +9,14 @@
 import Foundation
 
 class Warrior {
-    //MARK: Enums
+    // MARK: Enums
     
     /// The different types of warriors
     enum WarriorType {
         case archer, magus, knight, barbarian
     }
     
-    //MARK: Static
+    // MARK: Static
     static func createWarriorAccordingTo(type: WarriorType, warriorName: String) -> Warrior {
         switch type {
         case .archer:
@@ -30,7 +30,7 @@ class Warrior {
         }
     }
     
-    //MARK: Initializers
+    // MARK: Initializers
     init(name: String, weapon: Weapon, healthPoints: Int) {
         self.name = name
         self.weapon = weapon
@@ -38,7 +38,7 @@ class Warrior {
         self.maxHealthPoints = healthPoints
     }
     
-    //MARK: Properties
+    // MARK: Properties
     
     /// Property which represents the warrior's name to differentiate them
     var name: String
@@ -75,7 +75,7 @@ class Warrior {
         return weapon.magicBonus
     }
 
-    //MARK: Public Methods
+    // MARK: Public Methods
     
     /// Function that lowers the healthpoints of the opponent team's warrior during an attack according to the attackpoints of our warrior
     func attack(opponent: Warrior) {

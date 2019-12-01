@@ -10,7 +10,7 @@ import Foundation
 
 class GameManager {
     
-    //MARK: Properties & Constants
+    // MARK: Properties & Constants
     
     /// Property which limit the number of players in the fight
     private let numberOfPlayerInGame = 2
@@ -45,7 +45,7 @@ class GameManager {
         return false
     }
     
-    //MARK: Public Methods
+    // MARK: Public Methods
     /// Function which resets the game, create the players and warriors, then start the fight
     func playGame() {
         resetGame()
@@ -55,7 +55,7 @@ class GameManager {
         startFightPhase()
     }
     
-    //MARK: Private Methods
+    // MARK: Private Methods
     /// Function which empty the players' array and reset to 0 the round counter
     private func resetGame() {
         players.removeAll()
